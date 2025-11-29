@@ -1,0 +1,453 @@
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.home-main {
+  flex: 1;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.home-title-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.title-icon-box {
+  width: 60px;
+  height: 60px;
+  background: #ff6b35;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.title-heart {
+  font-size: 2rem;
+  filter: brightness(0) invert(1);
+}
+
+.home-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  color: #ff6b35;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.home-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  margin: 0;
+  max-width: 700px;
+}
+
+.open-chat-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: #ff6b35;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-top: 1rem;
+}
+
+.open-chat-button:hover {
+  background: #ff8555;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+}
+
+.chat-icon {
+  font-size: 1.2rem;
+}
+
+/* About Section */
+.about-section {
+  padding: 6rem 2rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: #ff6b35;
+  margin: 0 auto 3rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Dosha Cards Section */
+.dosha-cards-section {
+  padding: 6rem 2rem;
+  background: #0a0a0a;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dosha-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.dosha-card {
+  background: rgba(20, 20, 20, 0.8);
+  border: 2px solid rgba(255, 107, 53, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.dosha-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.dosha-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dosha-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dosha-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 107, 53, 0.6);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.dosha-card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.dosha-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.dosha-name {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+}
+
+.dosha-elements {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-weight: 500;
+}
+
+.dosha-card-body {
+  position: relative;
+  z-index: 2;
+}
+
+.dosha-characteristics,
+.dosha-balance,
+.dosha-imbalance {
+  margin-bottom: 1.5rem;
+}
+
+.dosha-characteristics h4,
+.dosha-balance h4,
+.dosha-imbalance h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  color: #ff6b35;
+}
+
+.dosha-characteristics ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dosha-characteristics li {
+  padding: 0.5rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.dosha-characteristics li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #ff6b35;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.dosha-balance p,
+.dosha-imbalance p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.dosha-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.dosha-card:hover .dosha-glow {
+  opacity: 0.3;
+}
+
+.vata-glow {
+  background: radial-gradient(circle, #4a90e2 0%, transparent 70%);
+}
+
+.pitta-glow {
+  background: radial-gradient(circle, #ff6b35 0%, transparent 70%);
+}
+
+.kapha-glow {
+  background: radial-gradient(circle, #8b4513 0%, transparent 70%);
+}
+
+.vata-card {
+  border-color: rgba(74, 144, 226, 0.3);
+}
+
+.vata-card:hover {
+  border-color: rgba(74, 144, 226, 0.6);
+  box-shadow: 0 20px 60px rgba(74, 144, 226, 0.2);
+}
+
+.pitta-card {
+  border-color: rgba(255, 107, 53, 0.3);
+}
+
+.pitta-card:hover {
+  border-color: rgba(255, 107, 53, 0.6);
+  box-shadow: 0 20px 60px rgba(255, 107, 53, 0.2);
+}
+
+.kapha-card {
+  border-color: rgba(139, 69, 19, 0.3);
+}
+
+.kapha-card:hover {
+  border-color: rgba(139, 69, 19, 0.6);
+  box-shadow: 0 20px 60px rgba(139, 69, 19, 0.2);
+}
+
+/* Sticky Chatbot Button */
+.sticky-chat-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #ff6b35;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.sticky-chat-button.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.sticky-chat-button:hover {
+  background: #ff8555;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
+}
+
+.chat-button-icon {
+  font-size: 1.5rem;
+}
+
+.chat-button-text {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 6rem 1rem 3rem;
+    min-height: auto;
+  }
+
+  .home-title {
+    font-size: 2.5rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .home-description {
+    font-size: 1rem;
+  }
+
+  .title-icon-box {
+    width: 50px;
+    height: 50px;
+  }
+
+  .title-heart {
+    font-size: 1.5rem;
+  }
+
+  .about-section,
+  .dosha-cards-section {
+    padding: 4rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .dosha-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .dosha-card {
+    padding: 2rem;
+  }
+
+  .sticky-chat-button {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .chat-button-text {
+    display: none;
+  }
+
+  .chat-button-icon {
+    font-size: 1.3rem;
+  }
+}

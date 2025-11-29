@@ -1,0 +1,65 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "namaste", "good morning", "good afternoon", "good evening"],
+      "responses": ["Namaste! I'm AyurSutra Bot, your Ayurvedic wellness assistant. I'm here to help you discover your Dosha (Prakriti) and recommend personalized Panchakarma therapies. Shall we begin your assessment?"],
+      "context": ""
+    },
+    {
+      "tag": "start_assessment",
+      "patterns": ["start", "begin", "yes", "ready", "let's go", "proceed"],
+      "responses": ["Great! Let's begin your Dosha assessment. I'll ask you a series of questions about your physical characteristics, mental traits, and lifestyle habits."],
+      "context": "assessment"
+    },
+    {
+      "tag": "body_type",
+      "patterns": ["thin", "slim", "light", "medium", "average", "heavy", "large", "big"],
+      "responses": ["Thank you for that information."],
+      "context": "physical_assessment"
+    },
+    {
+      "tag": "skin_type",
+      "patterns": ["dry", "oily", "normal", "combination", "sensitive", "rough", "smooth"],
+      "responses": ["I understand."],
+      "context": "physical_assessment"
+    },
+    {
+      "tag": "energy_level",
+      "patterns": ["high", "low", "moderate", "variable", "irregular", "consistent"],
+      "responses": ["Noted."],
+      "context": "lifestyle_assessment"
+    },
+    {
+      "tag": "appetite",
+      "patterns": ["strong", "weak", "irregular", "regular", "variable", "consistent"],
+      "responses": ["Thank you."],
+      "context": "digestive_assessment"
+    },
+    {
+      "tag": "sleep",
+      "patterns": ["deep", "light", "interrupted", "sound", "restless", "peaceful"],
+      "responses": ["I see."],
+      "context": "lifestyle_assessment"
+    },
+    {
+      "tag": "stress_response",
+      "patterns": ["anxious", "irritable", "calm", "worried", "angry", "peaceful"],
+      "responses": ["Understood."],
+      "context": "mental_assessment"
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thank you", "thanks", "grateful", "appreciate"],
+      "responses": ["You're welcome! I'm here to help you on your wellness journey."],
+      "context": ""
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you", "farewell"],
+      "responses": ["Namaste! May you find balance and wellness. Feel free to return anytime."],
+      "context": ""
+    }
+  ]
+}
+

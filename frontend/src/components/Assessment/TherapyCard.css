@@ -1,0 +1,119 @@
+.therapy-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(245, 87, 108, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.therapy-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(245, 87, 108, 0.2);
+  border-color: #f5576c;
+}
+
+[data-theme="dark"] .therapy-card {
+  background: rgba(30, 30, 30, 0.7);
+  border-color: rgba(245, 87, 108, 0.5);
+}
+
+.therapy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.therapy-name {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #f5576c;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .therapy-name {
+  color: #f5576c;
+}
+
+.therapy-badge {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.therapy-description {
+  color: #2c3e50;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+[data-theme="dark"] .therapy-description {
+  color: #f0f0f0;
+}
+
+.therapy-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #666;
+  min-width: 100px;
+  font-size: 0.9rem;
+}
+
+[data-theme="dark"] .detail-label {
+  color: #aaa;
+}
+
+.detail-value {
+  color: #2c3e50;
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .detail-value {
+  color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .therapy-card {
+    padding: 1rem;
+  }
+  
+  .therapy-name {
+    font-size: 1.2rem;
+  }
+  
+  .therapy-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .detail-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .detail-label {
+    min-width: auto;
+  }
+}
+
