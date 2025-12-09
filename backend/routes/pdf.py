@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Response
-from pdf_generator import generate_pdf_report
+from utils.pdf_generator import generate_pdf_report
 
 router = APIRouter()
 
