@@ -1,11 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import Header from './components/UI/Header'
 import Chat from './pages/Chat'
 import Results from './pages/Results'
 
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         {/* Redirect root to chat */}
         <Route path="/" element={<Navigate to="/chat" replace />} />

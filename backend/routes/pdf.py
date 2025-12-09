@@ -1,39 +1,20 @@
-"""
-PDF Generation Endpoint
-Creates downloadable PDF reports
-"""
-from fastapi import APIRouter, HTTPException
-from fastapi.responses import FileResponse
-from pydantic import BaseModel
-from typing import Dict, Any
-from utils.pdf_generator import generate_pdf_report
-import os
+from fastapi import APIRouter, Response
+from pdf_generator import generate_pdf_report
 
 router = APIRouter()
 
-class PDFRequest(BaseModel):
-    user_data: Dict[str, Any] = {}
-    dosha_results: Dict[str, Any]
-    panchakarma_recs: Dict[str, Any]
+@router.post("/generate")
+async def generate_pdf(data: dict):
+    user_data = data["user_data"]
+    dosha_results = data["dosha_results"]
+    panchakarma_recs = data["panchakarma_recs"]
 
-@router.post("/api/pdf/generate")
-async def generate_pdf(request: PDFRequest):
-    """Generate PDF report"""
-    try:
-        pdf_path = generate_pdf_report(
-            request.user_data,
-            request.dosha_results,
-            request.panchakarma_recs
-        )
-        
-        if not os.path.exists(pdf_path):
-            raise HTTPException(status_code=500, detail="PDF generation failed")
-        
-        return FileResponse(
-            pdf_path,
-            media_type='application/pdf',
-            filename='ayursutra_assessment_report.pdf'
-        )
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    pdf_path = generate_pdf_report(user_data, dosha_results, panchakarma_recs)
 
+    return Response(
+        content=open(pdf_path, "rb").read(),
+        media_type="application/pdf",
+        headers={
+            "Content-Disposition": f'attachment; filename="AyurSutra_Report.pdf"'
+        }
+    )

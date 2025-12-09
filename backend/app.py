@@ -4,7 +4,6 @@ Ayurvedic Dosha Detection & Panchakarma Recommendation Chatbot
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 from database.database import engine, Base
 from routes import chat, assessment, pdf
 import sys
@@ -12,7 +11,6 @@ import os
 
 # Add backend directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import os
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -26,7 +24,11 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "http://127.0.0.1:5173"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -37,10 +39,8 @@ app.include_router(chat.router)
 app.include_router(assessment.router)
 app.include_router(pdf.router)
 
-# Mount static files for reports
-reports_dir = os.path.join(os.path.dirname(__file__), 'reports')
-os.makedirs(reports_dir, exist_ok=True)
-app.mount("/reports", StaticFiles(directory=reports_dir), name="reports")
+# ❌ REMOVE STATIC REPORTS DIRECTORY (NOT ALLOWED ON RENDER)
+# No app.mount("/reports") because we now store PDFs only in /tmp
 
 @app.get("/")
 async def root():
@@ -58,7 +58,7 @@ async def root():
 async def health_check():
     return {"status": "healthy"}
 
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
-
